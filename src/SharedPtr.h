@@ -52,7 +52,7 @@ template <typename T>
 class ControlBlockEmbedded : public ControlBlockBase {
 public:
     template <typename... Args>
-    explicit ControlBlockEmbedded(Args&&... args) : currentValue(std::forward<Args>(args)...) {};
+    explicit ControlBlockEmbedded(Args&&... args) : currentValue(std::forward<Args>(args)...) {}
     ~ControlBlockEmbedded() override = default;
     void* managedAddress() override { return &currentValue; };
 private:
